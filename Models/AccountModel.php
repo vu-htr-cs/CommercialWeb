@@ -38,7 +38,7 @@
         $this->_query($sql1);  
     }
     public function handleRes($username,$password1,$password2,$email,$sdt){
-        $vaild=($password1==$password2);
+        $vaild=($password1==$password2); 
         $vaild=$vaild && $this->validateLenUP($password1);
         $vaild=$vaild && $this->validateEmail($email);
         

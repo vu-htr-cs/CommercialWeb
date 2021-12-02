@@ -331,7 +331,6 @@
    
     function fetchapi(){
         //  let http= new XMLHttpRequest();
-        
         //  http.onreadystatechange = function () {
         //      if( this.readyState ==4 && this.status == 200){
         //          document.getElementById("content").innerHTML=this.responseText;
@@ -340,13 +339,11 @@
         //  http.open('GET','xuly.json',true);
         //  http.send();
 
-        var postAPI='index.php?controller=product&action=getcomment&idsp=<?= $_GET['idsp'] ?>';
-      
+        var postAPI='index.php?controller=product&action=getcomment&idsp=<?= $_GET['idsp'] ?>';  
         fetch(postAPI)
         .then(respone=>respone.json())
         .then(post=> {
-       var htmls= post.map(item=>{
-           
+       var htmls= post.map(item=>{         
            return ` <div class="row commentbox">
            <div class="col-lg-1 col-sm-1 col-md-1 voting">
 
@@ -355,11 +352,7 @@
                               
                             </div>
                             <input type="image" src="./public/images/hand-thumbs-down.svg"/>
-
-                       
-
-           </div>
-           
+           </div>      
            <div class="col-lg-1 col-md-1 col-sm-2 readers">
                <img src="./public/images/avatar/${item.url}.jpg" alt="ava" class="ava">
            </div>
@@ -371,10 +364,7 @@
                <div class="cmt-time">
                    <i> Đăng ngày: ${item.time}</i> 
                </div>
-
            </div>
-
-
        </div>`;
       
 

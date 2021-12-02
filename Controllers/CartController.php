@@ -76,7 +76,10 @@ class CartController extends BaseController{
     public function changenum(){
         $id=$_GET['id'];
         $soluong=$_GET['soluong'];
-        $_SESSION['cart'][$id]['soluong']=$soluong;
+        if($soluong<=0){
+            unset($_SESSION['cart'][$id]);
+        }
+        else {$_SESSION['cart'][$id]['soluong']=$soluong;}
 
        
         header("Location: index.php?controller=cart");
